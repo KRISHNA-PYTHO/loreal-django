@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Order Summary - L’Oréal {% endblock %}
+
+{% block content %}
+<div class="container my-5">
+    <h2 class="text-center text-primary">Your Order Summary</h2>
+    <div class="row justify-content-center">
+        <div class="col-lg-8 col-md-10">
+            <div class="card shadow-lg p-4 border-0 rounded-3">
+                <h4 class="text-secondary">Shipping Details</h4>
+                <p><strong>Name:</strong> {{ user.full_name }}</p>
+                <p><strong>Email:</strong> {{ user.email }}</p>
+                <p><strong>Phone:</strong> {{ user.phone }}</p>
+                <p><strong>Address:</strong> {{ user.address }}</p>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-10 mt-4 mt-lg-0">
+            <div class="card shadow-lg p-4 border-0 rounded-3">
+                <h4 class="text-secondary">Order Details</h4>
+                <ul class="list-group">
+                    {% for item in cart_items %}
+                        <li class="list-group-item d-flex justify-content-between align-items-center border-0">
+                            <img src="{{ item.product.image.url }}" alt="{{ item.product.name }}" class="img-fluid rounded" width="50">
+                            <span class="fw-bold">{{ item.product.name }}</span>
+                            <span class="badge bg-primary rounded-pill">₹{{ item.product.price }}</span>
+                        </li>
+                    {% endfor %}
+                </ul>
+                <h5 class="mt-3 text-end">Total: <span class="text-success fw-bold">₹{{ total_price }}</span></h5>
+                <button class="btn btn-success w-100 mt-3 py-2 fw-bold">Proceed to Payment</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

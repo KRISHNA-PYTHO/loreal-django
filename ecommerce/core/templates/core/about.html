@@ -1,0 +1,64 @@
+{% extends "core/base.html" %}
+
+{% block title %}About L'Oréal{% endblock title %}
+
+
+{% block css %}
+
+<style>
+    .about {
+        background-color: #f8f9fa;
+        padding: 50px 0;
+    }
+    .heading_about h1, .mission h1, .ourstory h1, .apart h1, .commitment h1 {
+        text-align: center;
+        color: #333;
+        font-weight: bold;
+    }
+    .para, .mission_para, .ourstory_Para, .apart_para, .commitment_para {
+        text-align: justify;
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: #555;
+    }
+</style>
+{% endblock css %}
+
+{% block content %}
+<div class="container about">
+    <div class="heading_about">
+        <h1>About L'Oréal</h1>
+    </div>
+    <div class="para">
+        Welcome to L'Oréal, where innovation meets beauty. As the world's leading beauty brand, we are dedicated to delivering premium skincare, haircare, and cosmetics that empower individuals to express themselves confidently.
+    </div>
+    <div class="mission">
+        <h1>Our Mission</h1>
+    </div>
+    <div class="mission_para">
+        At L'Oréal, our mission is to bring beauty to everyone. We strive to create sustainable, high-quality products that cater to diverse needs while setting new industry standards in innovation and excellence.
+    </div>
+    <div class="ourstory">
+        <h1>Our Story</h1>
+    </div>
+    <div class="ourstory_Para">
+        Founded in 1909, L'Oréal started as a visionary brand with a single mission—enhancing beauty through research and science. Over the years, we have grown into a global leader in cosmetics, offering revolutionary beauty solutions for all.
+    </div>
+    <div class="apart">
+        <h1>What Sets Us Apart</h1>
+    </div>
+    <div class="apart_para">
+        <strong>Innovative Beauty:</strong> We invest in cutting-edge technology to create groundbreaking beauty formulas.
+        <br><strong>Global Reach:</strong> With a presence in over 150 countries, we are dedicated to making beauty accessible to all.
+        <br><strong>Commitment to Sustainability:</strong> L'Oréal is committed to ethical sourcing, eco-friendly packaging, and responsible production.
+    </div>
+    <div class="commitment">
+        <h1>Our Commitment</h1>
+    </div>
+    <div class="commitment_para">
+        <strong>Quality & Excellence:</strong> We ensure every product meets the highest standards of safety and effectiveness.
+        <br><strong>Inclusivity & Diversity:</strong> We believe beauty is for everyone, embracing all skin tones, hair types, and identities.
+        <br><strong>Giving Back:</strong> L'Oréal supports education, women's empowerment, and sustainability initiatives worldwide.
+    </div>
+</div>
+{% endblock content %}

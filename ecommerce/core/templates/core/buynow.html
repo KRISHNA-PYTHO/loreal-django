@@ -1,0 +1,72 @@
+{% extends "core/base.html" %}
+
+{% block title %} Order Summary {% endblock title %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="card shadow-lg">
+                <div class="card-header bg-primary text-white">
+                    <h3 class="text-center">Order Summary</h3>
+                </div>
+                <div class="card-body">
+                    <table class="table table-bordered">
+                        <thead class="bg-light">
+                            <tr>
+                                <th>Product Name</th>
+                                <th class="text-center">Price</th>
+                                <th class="text-center">Quantity</th>
+                                <th class="text-right">Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>{{ product.name }}</td>
+                                <td class="text-center">₹{{ product.discounted_price }}</td>
+                                <td class="text-center">1</td>
+                                <td class="text-right">₹{{ product.discounted_price }}</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"></td>
+                                <td class="text-center"><strong>Shipping</strong></td>
+                                <td class="text-right">₹150</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"></td>
+                                <td class="text-center"><strong>Total</strong></td>
+                                <td class="text-right"><strong>₹{{ final_price }}</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="mt-4">
+                <h5>Select Delivery Address</h5>
+                <form method="POST" action="{% url 'payment' %}">
+                    {% csrf_token %}
+                    {% for add in address %}
+                    <div class="card shadow-sm mt-3">
+                        <div class="card-body">
+                            <label class="d-flex align-items-center">
+                                <input type="radio" name="selected_address" value="{{ add.id }}" class="mr-2" checked>
+                                <div>
+                                    <h6 class="mb-1">{{ add.name }}</h6>
+                                    <p class="mb-0">{{ add.address }}, {{ add.city }}, {{ add.state }} - {{ add.pincode }}</p>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                    {% endfor %}
+
+                    <div class="mt-4 d-flex justify-content-between">
+                        <a href="{% url 'viewcart' %}" class="btn btn-secondary">Back to Cart</a>
+                        <button type="submit" class="btn btn-success">Proceed to Payment</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

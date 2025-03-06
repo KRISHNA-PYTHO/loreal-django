@@ -1,0 +1,53 @@
+{% extends "core/base.html" %}
+
+{% load static %}
+{% block title %}L’Oréal Featurettes{% endblock title %}
+
+{% block content %}
+
+<!-- Featurette Section -->
+<div class="container marketing mt-5">
+    <hr class="featurette-divider">
+
+    <!-- Luxury & Elegance Featurette -->
+    <div class="row featurette">
+        <div class="col-md-7">
+            <h2 class="featurette-heading">Luxury & Elegance</h2>
+            <p class="lead">Experience the essence of luxury with L’Oréal's premium beauty products. From radiant foundations to high-pigment lipsticks, each product is crafted to enhance your natural beauty while offering long-lasting wear.</p>
+        </div>
+        <div class="col-md-5">
+            <img class="featurette-image img-fluid mx-auto" src="{% static 'core/images/loreal/luxury_makeup.jpg' %}" alt="Luxury Makeup">
+        </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <!-- Innovation & Beauty Featurette -->
+    <div class="row featurette">
+        <div class="col-md-7 order-md-2">
+            <h2 class="featurette-heading">Innovation & Beauty</h2>
+            <p class="lead">L’Oréal’s research-driven formulas combine science with beauty. Our skincare-infused cosmetics provide hydration, SPF protection, and anti-aging benefits to ensure flawless skin with every application.</p>
+        </div>
+        <div class="col-md-5 order-md-1">
+            <img class="featurette-image img-fluid mx-auto" src="{% static 'core/images/loreal/innovation_beauty.jpg' %}" alt="Innovative Beauty">
+        </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <!-- The Art of Self-Care Featurette -->
+    <div class="row featurette">
+        <div class="col-md-7">
+            <h2 class="featurette-heading">The Art of Self-Care</h2>
+            <p class="lead">Elevate your self-care routine with indulgent face masks, nourishing serums, and hydrating lip treatments. Our products are designed to rejuvenate your skin and provide a spa-like experience at home.</p>
+        </div>
+        <div class="col-md-5">
+            <img class="featurette-image img-fluid mx-auto" src="{% static 'core/images/loreal/self_care.jpg' %}" alt="Self Care">
+        </div>
+    </div>
+
+    <hr class="featurette-divider">
+</div>
+<!-- End Featurette Section -->
+
+{% endblock content %}

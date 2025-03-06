@@ -1,0 +1,59 @@
+<!-- Carousel -->
+<div id="lorealCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+    <div class="carousel-inner">
+  
+      <!-- Slide 1 -->
+      <div class="carousel-item active">
+        <img src="static/core/images/carousel/loreal1.jpg" class="d-block w-100" alt="L’Oréal Paris">
+        <div class="carousel-overlay"></div>
+        <div class="container">
+          <div class="carousel-caption text-start">
+            <h1 class="display-4 fw-bold">Redefining Beauty</h1>
+            <p class="lead">Discover the elegance of L’Oréal Paris with our premium skincare and beauty essentials.</p>
+            <p><a class="btn btn-lg btn-light text-dark fw-bold" href="{% url 'skincare' %}">Shop Skincare</a></p>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Slide 2 -->
+      <div class="carousel-item">
+        <img src="static/core/images/carousel/loreal2.jpg" class="d-block w-100" alt="L’Oréal Haircare">
+        <div class="carousel-overlay"></div>
+        <div class="container">
+          <div class="carousel-caption text-center">
+            <h1 class="display-4 fw-bold text-white">Transform Your Hair</h1>
+            <p class="lead text-light">Advanced haircare solutions for every hair type and texture.</p>
+            <p><a class="btn btn-lg btn-warning text-dark fw-bold" href="{% url 'haircare' %}">Explore Haircare</a></p>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Slide 3 -->
+      <div class="carousel-item">
+        <img src="static/core/images/carousel/loreal3.jpg" class="d-block w-100" alt="L’Oréal Cosmetics">
+        <div class="carousel-overlay"></div>
+        <div class="container">
+          <div class="carousel-caption text-end">
+            <h1 class="display-4 fw-bold">Luxury Makeup</h1>
+            <p class="lead">From bold lipsticks to flawless foundations – unleash your beauty.</p>
+            <p><a class="btn btn-lg btn-danger fw-bold" href="{% url 'makeup' %}">Shop Now</a></p>
+          </div>
+        </div>
+      </div>
+  
+    </div>
+  
+    <!-- Carousel Controls -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#lorealCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    
+    <button class="carousel-control-next" type="button" data-bs-target="#lorealCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  
+  </div>
+  <!-- Carousel End -->
+  

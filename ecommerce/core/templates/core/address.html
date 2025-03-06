@@ -1,0 +1,74 @@
+{% extends "core/base.html" %}
+
+{% block content %}
+<div class="container-fluid profile view-cart view-cart-right-side-bar">
+      <div class="row">
+        <div class="col-md-2 d-none d-md-block sidebar bg-light shadow-sm p-3 rounded" >
+            <nav>
+            <div class="sidebar-sticky">
+                <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a class="nav-link active text-dark d-flex align-items-center" href="{% url 'profile' %}">
+                    <i class="fas fa-user-circle mr-2"></i>
+                    Dashboard <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark d-flex align-items-center" href="{% url 'changepassword' %}">
+                    <i class="fas fa-lock mr-2"></i>
+                    Change Password
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark d-flex align-items-center" href="{% url 'order' %}">
+                    <i class="fas fa-box mr-2"></i>
+                    Orders
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark d-flex align-items-center" href="{% url 'viewcart'  %}">
+                    <i class="fas fa-shopping-cart mr-2"></i>
+                    Cart
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark d-flex align-items-center" href="{% url 'address' %}">
+                    <i class="fas fa-map-marker-alt mr-2"></i>
+                    Address
+                    </a>
+                </li>
+                </ul>            
+            </div>
+            </nav>
+        </div>    
+        <div class="col-md-8">
+                <div class="container">
+                    <div class="row">
+                            <div class="col-sm-12 mt-4">
+                        <div class="container profile-form bg-white p-4 rounded shadow-lg">
+                            <div class="reg text-center mb-3">
+                                <h3 class="text-primary font-weight-bold">L’Oréal Profile</h3>
+                            </div>
+                            <form action="" method="POST" novalidate>
+                                {% csrf_token %}
+                                {% for f in mf %}
+                                <div class="form-group mb-3">
+                                    {{f.label_tag}} 
+                                    {{f}} 
+                                    <small class="text-danger">{{f.errors}}</small>
+                                </div>
+                                {% endfor %}
+                                <div class="text-center">
+                                    <input type="submit" value="Save" class="btn btn-primary register-button px-4 py-2 font-weight-bold">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>        
+            </div>
+        </div>
+      </div>
+    </div>
+
+{% endblock content %}
+

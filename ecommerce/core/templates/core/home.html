@@ -1,0 +1,66 @@
+{% extends "core/base.html" %}
+
+{% block title %}Home - L’Oréal{% endblock title %}
+
+{% block content %}
+
+<!-- Hero Carousel -->
+{% include "core/carousel.html" %}
+{% include "core/about.html" %}
+
+<!-- Featured Products Section -->
+{% load static %}
+
+<section class="container my-5">
+    <h2 class="text-center text-uppercase fw-bold">Discover Our Bestsellers</h2>
+    <p class="text-center text-muted">Explore our top-rated beauty products, loved by thousands worldwide.</p>
+    
+    <div class="row g-4 mt-4">
+        <!-- Sample Product Card -->
+        <div class="col-md-4">
+            <div class="card shadow-lg border-0">
+                <img src="{% static 'core/images/product1.jpg' %}" class="card-img-top" alt="Product 1">
+                <div class="card-body text-center">
+                    <h5 class="card-title">L’Oréal Revitalift Serum</h5>
+                    <p class="card-text text-muted">Advanced anti-aging formula for radiant skin.</p>
+                    <a href="#" class="btn btn-danger">Shop Now</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card shadow-lg border-0">
+                <img src="{% static 'core/images/product2.jpg' %}" class="card-img-top" alt="Product 2">
+                <div class="card-body text-center">
+                    <h5 class="card-title">L’Oréal Hydrating Cream</h5>
+                    <p class="card-text text-muted">Deep hydration for glowing, nourished skin.</p>
+                    <a href="#" class="btn btn-danger">Shop Now</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card shadow-lg border-0">
+                <img src="{% static 'core/images/product3.jpg' %}" class="card-img-top" alt="Product 3">
+                <div class="card-body text-center">
+                    <h5 class="card-title">L’Oréal Color Protect Shampoo</h5>
+                    <p class="card-text text-muted">Long-lasting color protection and shine.</p>
+                    <a href="#" class="btn btn-danger">Shop Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Promotional Banner -->
+<section class="text-center bg-dark text-light py-5">
+    <h2 class="fw-bold">Exclusive Offer - Limited Time Only!</h2>
+    <p>Get up to <strong>30% off</strong> on selected L’Oréal products. Hurry, while stocks last!</p>
+    <a href="#" class="btn btn-light btn-lg mt-3">Shop Now</a>
+</section>
+
+<!-- Image Cards -->
+{% include "core/image_card.html" %}
+
+<!-- Featurette Section -->
+{% include "core/featurette.html" %}
+
+{% endblock content %}

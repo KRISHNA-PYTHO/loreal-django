@@ -1,0 +1,43 @@
+{% extends "core/base.html" %}
+
+{% block title %}Register{% endblock title %}
+
+{% block content %}
+<div class="container register-container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow-lg p-4">
+                <h2 class="text-center text-danger mb-4">Create an Account</h2>
+                
+                <form action="" method="POST" novalidate>
+                    {% csrf_token %}
+                    
+                    {% if mf.non_field_errors %}
+                        <div class="alert alert-danger">
+                            {% for error in mf.non_field_errors %}
+                                <p class="mb-0">{{ error }}</p>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                    
+                    {% for field in mf %}
+                    <div class="mb-3">
+                        {{ field.label_tag }}
+                        {{ field }}
+                        <small class="text-danger">{{ field.errors }}</small>
+                    </div>
+                    {% endfor %}
+                    
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-success w-100">Register</button>
+                    </div>
+                </form>
+                
+                <div class="text-center mt-3">
+                    <p>Already have an account? <a href="{% url 'login' %}" class="text-primary">Login here</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

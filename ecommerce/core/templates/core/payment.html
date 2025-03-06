@@ -1,0 +1,30 @@
+{% extends "core/base.html" %}
+
+{% block content %}
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-6 col-md-8">
+            <div class="card shadow-lg p-4 border-0 rounded-3">
+                <h3 class="text-center text-primary">Complete Your Payment</h3>
+                <div class="payment-options mt-4">
+                    <!-- PayPal Payment Button -->
+                    <div class="payment-option text-center my-3">
+                        {{ paypal.render }}
+                    </div>
+                    
+                    <!-- Additional Payment Options -->
+                    <div class="payment-option text-center my-3">
+                        <button class="btn btn-outline-primary w-100 py-2 fw-bold">Pay with Credit/Debit Card</button>
+                    </div>
+                    <div class="payment-option text-center my-3">
+                        <button class="btn btn-outline-success w-100 py-2 fw-bold">Pay with Google Pay</button>
+                    </div>
+                    <div class="payment-option text-center my-3">
+                        <button class="btn btn-outline-dark w-100 py-2 fw-bold">Pay with Apple Pay</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

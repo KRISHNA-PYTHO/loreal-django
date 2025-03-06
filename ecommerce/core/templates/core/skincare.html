@@ -1,0 +1,23 @@
+{% extends "core/base.html" %}
+
+{% block title %} Skincare Categories {% endblock title %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2 class="text-center">Explore Our Skincare Range</h2>
+    <div class="row">
+        {% for category in skincare_categories %}
+        <div class="col-md-4">
+            <div class="card shadow-sm mb-4">
+                <img src="{{ category.image.url }}" class="card-img-top" alt="{{ category.name }}">
+                <div class="card-body">
+                    <h5 class="card-title">{{ category.name }}</h5>
+                    <p class="card-text">{{ category.description }}</p>
+                    <a href="{% url 'category_products' category.id %}" class="btn btn-primary">Shop Now</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock content %}

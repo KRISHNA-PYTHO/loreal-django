@@ -1,0 +1,59 @@
+{% extends "core/base.html" %}
+
+{% block title %}Profile{% endblock title %}
+
+{% block content %}
+<div class="container profile-container py-5">
+    <div class="row">
+        <div class="col-md-3 sidebar bg-light p-3 shadow-sm rounded">
+            <h4 class="text-center text-primary">Dashboard</h4>
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'profile' %}">
+                        <i class="fas fa-user-circle me-2"></i> Profile
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'changepassword' %}">
+                        <i class="fas fa-key me-2"></i> Change Password
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'order' %}">
+                        <i class="fas fa-box me-2"></i> Orders
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'viewcart' %}">
+                        <i class="fas fa-shopping-cart me-2"></i> Cart
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'address' %}">
+                        <i class="fas fa-map-marker-alt me-2"></i> Address
+                    </a>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="col-md-8 offset-md-1">
+            <div class="card shadow-sm p-4">
+                <h3 class="text-primary mb-4">Profile Details</h3>
+                <form action="" method="POST" novalidate>
+                    {% csrf_token %}
+                    {% for field in mf %}
+                    <div class="mb-3">
+                        {{ field.label_tag }}
+                        {{ field }}
+                        <small class="text-danger">{{ field.errors }}</small>
+                    </div>
+                    {% endfor %}
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-success w-50">Save Changes</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

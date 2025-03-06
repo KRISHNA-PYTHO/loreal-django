@@ -1,0 +1,100 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block title %}L’Oréal Hair Colours{% endblock title %}
+
+{% block content %}
+
+<!-- Hair Colour Page -->
+<div class="container-fluid product-container">
+  <div class="row">
+    
+    <!-- Filter Sidebar -->
+    <div class="col-md-3 filter-column bg-light p-4 rounded shadow-sm">
+      <h4 class="fw-bold mb-3">Filters</h4>
+
+      <!-- Price Range Filter with Slider -->
+      <div class="filter-title">Price Range</div>
+      <input type="range" class="form-range" min="100" max="2000" step="100" id="priceRange">
+      <p class="text-muted small">₹100 - ₹2000</p>
+
+      <!-- Shade Filter with Preview Circles -->
+      <div class="filter-title">Shade</div>
+      <div class="d-flex flex-wrap">
+        <div class="shade-circle bg-dark" title="Natural Black"></div>
+        <div class="shade-circle bg-brown" title="Dark Brown"></div>
+        <div class="shade-circle bg-red" title="Cherry Red"></div>
+        <div class="shade-circle bg-golden" title="Golden Blonde"></div>
+      </div>
+      
+      <!-- Discount Badges -->
+      <div class="filter-title">Discount</div>
+      <div class="d-flex gap-2">
+        <span class="badge bg-danger text-white">10% Off</span>
+        <span class="badge bg-warning text-dark">20% Off</span>
+        <span class="badge bg-success">30% Off</span>
+      </div>
+    </div>
+
+    <!-- Product Display Column -->
+    <div class="col-md-9">
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <h3 class="fw-bold">L’Oréal Hair Colours</h3>
+        <select class="form-select w-auto">
+          <option value="bestseller">Best Sellers</option>
+          <option value="latest">New Arrivals</option>
+          <option value="price-low-high">Price: Low to High</option>
+          <option value="price-high-low">Price: High to Low</option>
+        </select>
+      </div>
+      
+      <!-- Product Grid -->
+      <div class="row">
+        {% for product in hair_colours %}
+        <div class="col-lg-4 col-md-6 mb-4">
+          <a href="{% url 'productdetails' product.id %}" class="text-decoration-none">
+            <div class="card product-card shadow-sm border-0">
+              <img src="{{ product.image.url }}" class="card-img-top product-img" alt="{{ product.name }}">
+              <div class="card-body text-center">
+                <h5 class="card-title fw-bold">{{ product.name }}</h5>
+                <p class="text-muted small">{{ product.shade }}</p>
+                <h5 class="fw-bold text-dark">
+                  ₹{{ product.discounted_price }} <small class="text-muted fw-light text-decoration-line-through">₹{{ product.selling_price }}</small>
+                  <small class="text-danger">({{ product.discount }}% Off)</small>
+                </h5>
+                <button class="btn btn-dark w-100 mt-2">Shop Now</button>
+              </div>
+            </div>
+          </a>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Custom Styles -->
+<style>
+  .shade-circle {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    margin: 5px;
+    cursor: pointer;
+    border: 2px solid #fff;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  }
+  .product-card:hover {
+    transform: scale(1.05);
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+  }
+  .product-img {
+    height: 250px;
+    object-fit: cover;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+</style>
+
+{% endblock content %}
