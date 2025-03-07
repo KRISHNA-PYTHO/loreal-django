@@ -18,7 +18,7 @@
                         Categories
                     </a>
                     <ul class="dropdown-menu bg-dark">
-                        <li><a class="dropdown-item text-white" href="{% url 'haircare' %}">Hair Care</a></li>
+                        <li><a class="dropdown-item text-white" href="{% url 'haircolour' %}">Hair Colour</a></li>
                         <li><a class="dropdown-item text-white" href="{% url 'skincare' %}">Skin Care</a></li>
                         <li><a class="dropdown-item text-white" href="{% url 'makeup' %}">Makeup</a></li>
                     </ul>
@@ -36,7 +36,7 @@
                     <a class="nav-link text-white" href="{% url 'profile' %}"><i class="fas fa-user-circle"></i> {{ user.first_name }}</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white position-relative" href="{% url 'viewcart' %}">
+                    <a class="nav-link text-white position-relative" href="{% url 'cart_item' %}">
                         <i class="fas fa-shopping-cart"></i>
                         <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">3</span>
                     </a>

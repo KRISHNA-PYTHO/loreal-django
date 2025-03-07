@@ -23,10 +23,18 @@ class ProductCategory(models.Model):
         return self.name
 
 class Product(models.Model):
+    
+    CATEGORY_CHOICES = [
+        ('HAIRCOLOUR', 'Haircolour'),
+        ('SKINCARE', 'Skincare'),
+        ('MAKEUP', 'Makeup'),
+        
+    ]
     category = models.ForeignKey(ProductCategory, on_delete=models.CASCADE)
     name = models.CharField(max_length=255)
     description = models.TextField()
-    price = models.DecimalField(max_digits=10, decimal_places=2)
+    price = models.DecimalField(max_digits=10, decimal_places=2,default=0.00)
+    stock = models.IntegerField()
     discounted_price = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True)
     image = models.ImageField(upload_to='products/', default='default.jpg')
     created_at = models.DateTimeField(auto_now_add=True, null=True)

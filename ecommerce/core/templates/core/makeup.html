@@ -1,79 +1,23 @@
 {% extends "core/base.html" %}
 
-{% load static %}
-{% block title %}Makeup Categories{% endblock title %}
+{% block title %} Makeup Categories {% endblock title %}
 
 {% block content %}
-
-<!-- Makeup Category Section -->
-<div class="container-fluid makeup-container"> <!-- Use container-fluid for full-width layout -->
+<div class="container mt-4">
+    <h2 class="text-center">Explore Our Makeup Range</h2>
     <div class="row">
-        <!-- Filtering Column (3 Columns Wide) -->
-        <div class="col-md-3 filter-column">           
-            <!-- Price Range Filter -->
-            <div class="filter-title">Price Range</div>
-            <div class="filter-option">
-                <label><input type="checkbox" name="price" value="0-500"> ₹0 - ₹500</label><br>
-                <label><input type="checkbox" name="price" value="500-1000"> ₹500 - ₹1000</label><br>
-                <label><input type="checkbox" name="price" value="1000-2000"> ₹1000 - ₹2000</label>
-            </div>
-            
-            <!-- Shade Filter -->
-            <div class="filter-title">Shade</div>
-            <div class="filter-option">
-                <label><input type="checkbox" name="shade" value="nude"> Nude</label><br>
-                <label><input type="checkbox" name="shade" value="pink"> Pink</label><br>
-                <label><input type="checkbox" name="shade" value="red"> Red</label><br>
-                <label><input type="checkbox" name="shade" value="coral"> Coral</label>
-            </div>
-            
-            <!-- Discount Filter (Radio Buttons) -->
-            <div class="filter-title">Discount</div>
-            <div class="filter-option">
-                <label><input type="radio" name="discount" value="10"> 10% Off</label><br>
-                <label><input type="radio" name="discount" value="20"> 20% Off</label><br>
-                <label><input type="radio" name="discount" value="30"> 30% Off</label>
-            </div>
-        </div>
-        
-        <!-- Product Display Column (9 Columns Wide) -->
-        <div class="col-md-9 product-column">
-            <div class="sort-options">
-                <label for="sort" class="sort-by">Sort By: </label>
-                <select id="sort" class="form-control d-inline w-auto">
-                    <option value="latest">Latest</option>
-                    <option value="price-low-high">Price: Low to High</option>
-                    <option value="price-high-low">Price: High to Low</option>
-                </select>
-            </div>
-            
-            <!-- Product Cards -->
-            
-            <div class="row">
-                {% for mc in makeup_category %}
-                <div class="col-sm-4 mb-4">
-                  <a href="{% url 'makeupdetails' mc.id %}" style="text-decoration: none;">
-                    <div class="card makeup_categories_card makeup_card">
-                        <img class="card-img-top" src="{{mc.product_image.url}}" alt="Makeup Product">
-                        <div class="card-body">
-                          <h5 class="card-title makeup-name">{{mc.name}}</h5>
-                           <div class="text-center">
-                                <h5 class="font-weight-bold text-dark">
-                                    <i class="fa-solid fa-indian-rupee-sign makeup-name"></i> <span class="makeup-discounted-price">{{mc.discounted_price}}</span> 
-                                    <s class="text-danger"><small class="fw-light rupee makeup-name">{{mc.selling_price}}</small></s> 
-                                    <small class="text-warning">(% off)</small>
-                                </h5>
-                            </div>
-                        </div>
-                    </div>
-                  </a>
+        {% for category in make_categories %}
+        <div class="col-md-4">
+            <div class="card shadow-sm mb-4">
+                <img src="{{ category.image.url }}" class="card-img-top" alt="{{ category.name }}">
+                <div class="card-body">
+                    <h5 class="card-title">{{ category.name }}</h5>
+                    <p class="card-text">{{ category.description }}</p>
+                    <a href="{% url 'category_products' category.id %}" class="btn btn-primary">Shop Now</a>
                 </div>
-                {% endfor %}
             </div>
         </div>
+        {% endfor %}
     </div>
 </div>
-
-<!-- End Makeup Category Section -->
-
 {% endblock content %}

@@ -5,6 +5,7 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('', views.home, name='home'),
+    path('about/', views.about, name='about'),
     path('contact/', views.contact, name='contact'),
     path('login/', views.login_view, name='login'),
     path('register/', views.register, name='register'),
@@ -18,7 +19,7 @@ urlpatterns = [
     path('product/<int:product_id>/', views.product_detail, name='product_detail'),
     
     # Cart URLs
-    path('cart/', views.view_cart, name='view_cart'),
+    path('cart/', views.view_cart, name='cart_item'),
     path('add-to-cart/<int:product_id>/', views.add_to_cart, name='add_to_cart'),
     path('remove-from-cart/<int:cart_id>/', views.remove_from_cart, name='remove_from_cart'),
     
@@ -35,6 +36,9 @@ urlpatterns = [
     
     # Category-Specific URLs
     path('skincare/', views.skincare, name='skincare'),
+    path('haircolour/', views.haircolour, name='haircolour'),
+    path('makeup/', views.makeup, name='makeup'),
+
 ]
 
 if settings.DEBUG:

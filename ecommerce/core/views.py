@@ -9,6 +9,10 @@ from .forms import AddressForm
 def home(request):
     products = Product.objects.all()
     return render(request, 'core/home.html', {'products': products})
+#about
+def about(request):
+    return render(request, 'core/about.html')
+
 
 # Contact Page
 def contact(request):
@@ -119,6 +123,14 @@ def reset_password(request):
 def skincare(request):
     skincare_categories = ProductCategory.objects.all()
     return render(request, 'core/skincare.html', {'skincare_categories': skincare_categories})
+
+def haircolour(request):
+    hair_categories = ProductCategory.objects.all()
+    return render(request, 'core/haircolour.html', {'hair_categories': hair_categories})
+
+def makeup(request):
+    make_categories = ProductCategory.objects.all()
+    return render(request, 'core/makeup.html', {'hair_categories': make_categories})
 
 # Address Form Handling
 def address(request):
