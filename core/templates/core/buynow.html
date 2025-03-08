@@ -1,0 +1,13 @@
+{% block content %}
+<h1>Buy Now</h1>
+<div class="product-details">
+    <img src="{{ product.image.url }}" alt="{{ product.name }}">
+    <h2>{{ product.name }}</h2>
+    <p>{{ product.description }}</p>
+    <p>Price: ${{ product.price }}</p>
+    <form method="POST" action="{% url 'place_order' product.id %}">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-primary">Confirm Purchase</button>
+    </form>
+</div>
+{% endblock %}

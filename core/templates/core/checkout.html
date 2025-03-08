@@ -1,0 +1,28 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+<h1>Checkout</h1>
+<form method="POST" action="{% url 'place_order' %}">
+    {% csrf_token %}
+    
+    <h3>Shipping Address</h3>
+    <select name="address" required>
+        {% for address in addresses %}
+            <option value="{{ address.id }}">{{ address.street }}, {{ address.city }}, {{ address.state }}, {{ address.zip_code }}</option>
+        {% endfor %}
+    </select>
+    <a href="{% url 'add_address' %}">Add New Address</a>
+    
+    <h3>Order Summary</h3>
+    <ul>
+        {% for item in cart_items %}
+            <li>{{ item.product.name }} - {{ item.quantity }} x ${{ item.product.price }}</li>
+        {% endfor %}
+    </ul>
+    
+    <h3>Total: ${{ total_price }}</h3>
+    
+    <button type="submit" class="btn btn-success">Place Order</button>
+</form>
+{% endblock %}
+

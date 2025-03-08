@@ -1,0 +1,17 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+<h1>Add New Address</h1>
+<form method="POST">
+    {% csrf_token %}
+    <label for="street">Street:</label>
+    <input type="text" name="street" required>
+    <label for="city">City:</label>
+    <input type="text" name="city" required>
+    <label for="state">State:</label>
+    <input type="text" name="state" required>
+    <label for="zip_code">Zip Code:</label>
+    <input type="text" name="zip_code" required>
+    <button type="submit">Add Address</button>
+</form>
+{% endblock %}

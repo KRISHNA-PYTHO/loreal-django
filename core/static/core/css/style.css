@@ -1,0 +1,413 @@
+/* About Us Section Styling */
+#about-us {
+    padding: 40px 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 1200px;
+}
+
+#about-us h2 {
+    text-align: center;
+    font-size: 32px;
+    color: #d81b60;
+    margin-bottom: 20px;
+}
+
+.about-content {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+}
+
+.about-content h3 {
+    font-size: 24px;
+    color: #d81b60;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.about-content ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+.about-content ul li {
+    margin-bottom: 10px;
+}
+
+.about-content p {
+    margin-bottom: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #about-us {
+        padding: 20px 10px;
+    }
+
+    #about-us h2 {
+        font-size: 28px;
+    }
+
+    .about-content h3 {
+        font-size: 20px;
+    }
+
+    .about-content {
+        font-size: 14px;
+    }
+}
+/* General container styling */
+.container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Center the heading */
+.text-center {
+    text-align: center;
+    font-size: 32px;
+    color: #d81b60;
+    margin-bottom: 20px;
+}
+
+/* Row styling for the product grid */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Column styling for each product */
+.col-md-4 {
+    flex: 0 0 calc(33.333% - 20px);
+    max-width: calc(33.333% - 20px);
+    box-sizing: border-box;
+}
+
+/* Card styling for each product */
+.card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Card image styling */
+.card-img-top {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Card body styling */
+.card-body {
+    padding: 15px;
+    text-align: center;
+}
+
+/* Card title styling */
+.card-title {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Card text styling */
+.card-text {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+/* Price styling */
+.card-body p strong {
+    font-size: 18px;
+    color: #d81b60;
+    font-weight: bold;
+}
+
+/* Button styling */
+.btn-primary {
+    padding: 10px 20px;
+    background-color: #d81b60;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #c2185b;
+}
+
+/* No products available message */
+.row p {
+    text-align: center;
+    font-size: 18px;
+    color: #666;
+    width: 100%;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .col-md-4 {
+        flex: 0 0 calc(50% - 20px);
+        max-width: calc(50% - 20px);
+    }
+
+    .text-center {
+        font-size: 28px;
+    }
+
+    .card-title {
+        font-size: 18px;
+    }
+
+    .card-text {
+        font-size: 14px;
+    }
+
+    .card-body p strong {
+        font-size: 16px;
+    }
+
+    .btn-primary {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .col-md-4 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+/* General body styling */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Navbar styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 10px 20px;
+    color: #fff;
+}
+
+.navbar .logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.navbar .nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.navbar .nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.navbar .nav-links a:hover {
+    color: #d81b60;
+}
+
+/* Form container styling */
+.form-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    margin: 20px auto;
+}
+
+.form-container h1 {
+    text-align: center;
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Form group styling */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #d81b60;
+    outline: none;
+}
+
+/* Button styling */
+.btn-primary {
+    width: 100%;
+    padding: 10px;
+    background-color: #d81b60;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #c2185b;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar .nav-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .form-container {
+        padding: 15px;
+    }
+
+    .form-container h1 {
+        font-size: 20px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        font-size: 14px;
+    }
+
+    .btn-primary {
+        font-size: 14px;
+    }
+}
+/* Carousel container styling */
+/* Carousel container styling */
+#carouselExample {
+    margin: 20px auto;
+    max-width: 1200px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Carousel item styling */
+.carousel-item {
+    height: 400px; /* Set a fixed height for the carousel */
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f4f4f4; /* Background color for consistency */
+}
+
+/* Carousel image styling */
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Ensures the image fits within the container without cropping */
+}
+
+/* Carousel control buttons styling */
+.carousel-control-prev,
+.carousel-control-next {
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    opacity: 1;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    filter: invert(1);
+}
+
+/* Carousel indicators styling */
+.carousel-indicators {
+    bottom: 10px;
+}
+
+.carousel-indicators button {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: none;
+    margin: 0 5px;
+    transition: background-color 0.3s ease;
+}
+
+.carousel-indicators button.active {
+    background-color: #fff;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    #carouselExample {
+        margin: 10px auto;
+    }
+
+    .carousel-item {
+        height: 300px; /* Adjust height for smaller screens */
+    }
+
+    .carousel-control-prev,
+    .carousel-control-next {
+        width: 30px;
+        height: 30px;
+    }
+}
